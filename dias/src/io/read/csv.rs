@@ -3,8 +3,10 @@ use polars::prelude::*;
 use super::reader::Reader;
 
 impl Reader for CsvReadOptions {
-    fn extract(self) -> PolarsResult<DataFrame> {
-        self.try_into_reader_with_file_path(None)?.finish()
+    fn extract(self) -> PolarsResult<LazyFrame> {
+        Ok(self.try_into_reader_with_file_path(None)
+            ?.finish()
+            ?.lazy())
     }
 }
 
@@ -47,7 +49,7 @@ mod tests {
             ..CsvReadOptions::default()
         };
 
-        let result = reader.extract().expect("Read Error");
+        let result = reader.extract().ok().unwrap().collect().expect("Error loading DF");
 
         let col_names = ["Column1", "Column2"];
         

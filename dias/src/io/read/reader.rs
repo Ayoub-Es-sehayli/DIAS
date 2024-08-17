@@ -1,5 +1,5 @@
 use polars::prelude::*;
 
 pub trait Reader {
-    fn extract(self) -> PolarsResult<DataFrame>;
+    fn extract(self) -> PolarsResult<LazyFrame>;
 }
