@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-polars = { version = "0.42.0", features = ["lazy", "serde-lazy"] }
+polars = { version = "0.42.0", features = ["lazy", "serde-lazy", "strings", "regex", "is_in"] }
 
 [dev-dependencies]
 tempfile = "3.12.0"
