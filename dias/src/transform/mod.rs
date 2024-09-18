@@ -6,3 +6,4 @@ pub mod sort;
 pub mod filter;
 pub mod reverse_rows;
 pub mod cast_cols;
+pub mod join;
