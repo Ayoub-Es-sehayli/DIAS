@@ -8,3 +8,4 @@ pub mod reverse_rows;
 pub mod cast_cols;
 pub mod join;
 pub mod group_by;
+pub mod transpose;
