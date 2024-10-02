@@ -31,7 +31,7 @@ mod tests {
             "col4" => &[4],
         ).ok().unwrap().lazy();
 
-        let result = transformation.apply(df).schema().ok().unwrap();
+        let result = transformation.apply(df).collect().unwrap().schema();
 
         assert_eq!(result.len(), 2);
     }
