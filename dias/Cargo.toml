@@ -4,7 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-polars = { version = "0.43.1", features = ["lazy", "serde-lazy", "strings", "regex", "is_in", "rows"] }
+polars = { version = "0.43.1", features = ["lazy", "serde-lazy", "strings", "regex", "is_in", "rows", "dtype-date", "dtype-datetime", "temporal"] }
+itertools = "0.13.0"
 
 [dev-dependencies]
 tempfile = "3.12.0"
+chrono = "0.4.38"
